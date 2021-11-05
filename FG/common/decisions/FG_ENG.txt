@@ -1,0 +1,162 @@
+#Secure Oil imports for British
+secure_the_oil_imports_category = { 
+	secure_VEN = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = { 
+			original_tag = ENG
+		}
+
+		available = {
+			is_subject = no
+			NOT = { is_in_faction_with = VEN }
+			NOT = { VEN = { is_subject_of = ENG } }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			original_tag = ENG
+		}
+
+		complete_effect = {
+			if = {
+    				limit = {
+					VEN = {
+						exists = yes
+						is_subject = no
+					}	
+    				}
+				country_event = { id = FG_Eng.1 }
+			}
+			else = {
+				country_event = { id = FG_ENG.100 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	secure_695 = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = { 
+			original_tag = ENG
+		}
+
+		available = {
+			695 = {
+				owner = {
+					NOT = {
+						is_in_faction_with = ENG
+						is_subject_of = ENG
+					}
+				}
+			}
+			is_subject = no
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			original_tag = ENG
+		}
+
+		complete_effect = {
+			if = {
+    				limit = {
+					695 = { is_controlled_by = HOL }
+    				}   
+    				country_event = { id = FG_ENG.2 }
+			}
+			else = {
+				country_event = { id = FG_ENG.200 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	secure_IRQ = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = { 
+			original_tag = ENG
+		}
+
+		available = {
+			is_subject = no
+			NOT = { is_in_faction_with = IRQ }
+			NOT = { IRQ = { is_subject_of = ENG } }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			original_tag = ENG
+		}
+
+		complete_effect = {
+			if = {
+    				limit = {
+					IRQ = {
+						exists = yes
+						is_subject = no
+					}	
+    				}
+				country_event = { id = FG_ENG.3 }
+			}
+			else = {
+				country_event = { id = FG_ENG.300 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+	secure_PER = {
+
+		icon = eng_trade_unions_demand
+
+		allowed = { 
+			original_tag = ENG
+		}
+
+		available = {
+			NOT = { is_in_faction_with = PER }
+			is_subject = no
+			NOT = { PER = { is_subject_of = ENG } }
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			original_tag = ENG
+		}
+
+		complete_effect = {
+			if = {
+    				limit = {
+					PER = {
+						exists = yes
+						is_subject = no
+					}	
+    				}
+				country_event = { id = FG_ENG.4 }
+			}
+			else = {
+				country_event = { id = FG_ENG.400 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

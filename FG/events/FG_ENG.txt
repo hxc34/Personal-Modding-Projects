@@ -1,0 +1,587 @@
+add_namespace = FG_ENG
+#To-do, make USA intrestted in curaco and venezula no matter what, France and Germany intreasted in Curaco if war breaks out, Turkey and France intrested in iraq no matter what, 
+#and Soviets intrested in Iran no matter what
+country_event = {
+	id = FG_ENG.1
+	title = FG_ENG.1.t
+	desc = FG_ENG.1.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#Try to align
+	option = {
+		name = FG_ENG.1.a
+		trigger = {
+			VEN = {
+				is_subject = no
+				has_government = democratic
+			}
+		}
+		VEN = {
+			country_event = { id = FG_ENG.11 }
+		}
+	}
+	#Demand Resource Rights
+	option = {
+		name = FG_ENG.1.b
+		VEN = {
+			country_event = { id = FG_ENG.12 }
+		}
+	}
+	#Demand Supervision
+	option = {
+		name = FG_ENG.1.c
+		trigger = {
+			VEN = {
+				is_subject = no
+			}
+		}
+		VEN = {
+			country_event = { id = FG_ENG.13 }
+		}
+	}
+	#Declare war
+	option = {
+		name = FG_ENG.1.d
+		ENG = {
+			create_wargoal = {
+					target = VEN
+					type = take_state_focus
+					expire = 0
+					generator = { 307 489 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.1.e
+		307 = { add_claim_by = ENG }
+		489 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.11
+	title = FG_ENG.11.t
+	desc = FG_ENG.11.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.11.a
+		ENG = {
+			add_to_faction = ROOT
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.11.b
+		ENG = { country_event = { id = FG_ENG.121 } }
+	}
+}
+
+country_event = {
+	id = FG_ENG.12
+	title = FG_ENG.12.t
+	desc = FG_ENG.12.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.12.a
+		VEN = {
+			give_resource_rights = { receiver = ENG state = 307 }
+			give_resource_rights = { receiver = ENG state = 489 }
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.12.b
+		ENG = { country_event = { id = FG_ENG.121 } }
+	}
+}
+country_event = {
+	id = FG_ENG.13
+	title = FG_ENG.13.t
+	desc = FG_ENG.13.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.13.a
+		ENG = {
+			puppet = VEN
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.13.b
+		ENG = { country_event = { id = FG_ENG.121 } }
+	}
+}
+country_event = {
+	id = FG_ENG.121
+	title = FG_ENG.121.t
+	desc = FG_ENG.121.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#War
+	option = {
+		name = FG_ENG.121.a
+		ENG = {
+			create_wargoal = {
+					target = VEN
+					type = take_state_focus
+					expire = 0
+					generator = { 307 489 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.121.b
+		307 = { add_claim_by = ENG }
+		489 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.100
+	title = FG_ENG.100.t
+	desc = FG_ENG.100.d
+	picture = GFX_report_event_generic_sign_treaty2
+	option = {
+		name = FG_ENG.100.a
+		307 = { add_claim_by = ENG }
+		489 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.2
+	title = FG_ENG.2.t
+	desc = FG_ENG.2.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#Try to align
+	option = {
+		name = FG_ENG.2.a
+		trigger = {
+			HOL = {
+				is_subject = no
+				has_government = democratic
+			}
+		}
+		HOL = {
+			country_event = { id = FG_ENG.21 }
+		}
+	}
+	#Buy
+	option = {
+		name = FG_ENG.2.b
+		HOL = {
+			country_event = { id = FG_ENG.22 }
+		}
+	}
+	#Demand Resource Rights
+	option = {
+		name = FG_ENG.2.c
+		HOL = {
+			country_event = { id = FG_ENG.23 }
+		}
+	}
+	#Declare war
+	option = {
+		name = FG_ENG.2.d
+		ENG = {
+			create_wargoal = {
+					target = HOL
+					type = take_state_focus
+					expire = 0
+					generator = { 695 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.2.e
+		695 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.21
+	title = FG_ENG.21.t
+	desc = FG_ENG.21.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.21.a
+		ENG = {
+			add_to_faction = ROOT
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.21.b
+		ENG = { country_event = { id = FG_ENG.221 } }
+	}
+}
+
+country_event = {
+	id = FG_ENG.22
+	title = FG_ENG.22.t
+	desc = FG_ENG.22.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.22.a
+		add_political_power = 150
+		ENG = {
+			add_political_power = -150
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.22.b
+		ENG = { country_event = { id = FG_ENG.221 } }
+	}
+}
+country_event = {
+	id = FG_ENG.23
+	title = FG_ENG.23.t
+	desc = FG_ENG.23.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.23.a
+		HOL = {
+			give_resource_rights = { receiver = ENG state = 695 }
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.23.b
+		ENG = { country_event = { id = FG_ENG.221 } }
+	}
+}
+country_event = {
+	id = FG_ENG.221
+	title = FG_ENG.221.t
+	desc = FG_ENG.221.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#War
+	option = {
+		name = FG_ENG.221.a
+		ENG = {
+			create_wargoal = {
+					target = HOL
+					type = take_state_focus
+					expire = 0
+					generator = { 695 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.221.b
+		695 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.200
+	title = FG_ENG.200.t
+	desc = FG_ENG.200.d
+	picture = GFX_report_event_generic_sign_treaty2
+	option = {
+		name = FG_ENG.200.a
+		695 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.3
+	title = FG_ENG.3.t
+	desc = FG_ENG.3.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#Try to align
+	option = {
+		name = FG_ENG.3.a
+		trigger = {
+			IRQ = {
+				is_subject = no
+				has_government = democratic
+			}
+		}
+		IRQ = {
+			country_event = { id = FG_ENG.31 }
+		}
+	}
+	#Demand Resource Rights
+	option = {
+		name = FG_ENG.3.b
+		IRQ = {
+			country_event = { id = FG_ENG.32 }
+		}
+	}
+	#Demand Supervision
+	option = {
+		name = FG_ENG.3.c
+		trigger = {
+			IRQ = {
+				is_subject = no
+			}
+		}
+		IRQ = {
+			country_event = { id = FG_ENG.33 }
+		}
+	}
+	#Declare war
+	option = {
+		name = FG_ENG.3.d
+		ENG = {
+			create_wargoal = {
+					target = IRQ
+					type = take_state_focus
+					expire = 0
+					generator = { 676 291 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.3.e
+		291 = { add_claim_by = ENG }
+		676 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.31
+	title = FG_ENG.31.t
+	desc = FG_ENG.31.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.31.a
+		ENG = {
+			add_to_faction = ROOT
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.31.b
+		ENG = { country_event = { id = FG_ENG.321 } }
+	}
+}
+
+country_event = {
+	id = FG_ENG.32
+	title = FG_ENG.32.t
+	desc = FG_ENG.32.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.32.a
+		IRQ = {
+			give_resource_rights = { receiver = ENG state = 291 }
+			give_resource_rights = { receiver = ENG state = 676 }
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.32.b
+		ENG = { country_event = { id = FG_ENG.321 } }
+	}
+}
+country_event = {
+	id = FG_ENG.33
+	title = FG_ENG.33.t
+	desc = FG_ENG.33.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.33.a
+		ENG = {
+			puppet = IRQ
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.33.b
+		ENG = { country_event = { id = FG_ENG.321 } }
+	}
+}
+country_event = {
+	id = FG_ENG.321
+	title = FG_ENG.321.t
+	desc = FG_ENG.321.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#War
+	option = {
+		name = FG_ENG.321.a
+		ENG = {
+			create_wargoal = {
+					target = IRQ
+					type = take_state_focus
+					expire = 0
+					generator = { 676 291 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.321.b
+		291 = { add_claim_by = ENG }
+		676 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.300
+	title = FG_ENG.300.t
+	desc = FG_ENG.300.d
+	picture = GFX_report_event_generic_sign_treaty2
+	option = {
+		name = FG_ENG.300.a
+		291 = { add_claim_by = ENG }
+		676 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.4
+	title = FG_ENG.4.t
+	desc = FG_ENG.4.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#Try to align
+	option = {
+		name = FG_ENG.4.a
+		trigger = {
+			PER = {
+				is_subject = no
+				has_government = democratic
+			}
+		}
+		PER = {
+			country_event = { id = FG_ENG.41 }
+		}
+	}
+	#Demand Resource Rights
+	option = {
+		name = FG_ENG.4.b
+		PER = {
+			country_event = { id = FG_ENG.42 }
+		}
+	}
+	#Demand Supervision
+	option = {
+		name = FG_ENG.4.c
+		trigger = {
+			PER = {
+				is_subject = no
+			}
+		}
+		PER = {
+			country_event = { id = FG_ENG.43 }
+		}
+	}
+	#Declare war
+	option = {
+		name = FG_ENG.4.d
+		ENG = {
+			create_wargoal = {
+					target = PER
+					type = take_state_focus
+					expire = 0
+					generator = { 411 412 413 }
+				}
+		}
+	}
+	option = {
+		name = FG_ENG.4.e
+		411 = { add_claim_by = ENG }
+		412 = { add_claim_by = ENG }
+		413 = { add_claim_by = ENG }
+		
+	}
+}
+country_event = {
+	id = FG_ENG.41
+	title = FG_ENG.41.t
+	desc = FG_ENG.41.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.41.a
+		ENG = {
+			add_to_faction = ROOT
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.41.b
+		ENG = { country_event = { id = FG_ENG.421 } }
+	}
+}
+
+country_event = {
+	id = FG_ENG.42
+	title = FG_ENG.42.t
+	desc = FG_ENG.42.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.42.a
+		PER = {
+			give_resource_rights = { receiver = ENG state = 411 }
+			give_resource_rights = { receiver = ENG state = 412 }
+			give_resource_rights = { receiver = ENG state = 413 }
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.42.b
+		ENG = { country_event = { id = FG_ENG.421 } }
+	}
+}
+country_event = {
+	id = FG_ENG.43
+	title = FG_ENG.43.t
+	desc = FG_ENG.43.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#agree
+	option = {
+		name = FG_ENG.43.a
+		ENG = {
+			puppet = PER
+		}
+	}
+	#refuse
+	option = { 
+		name = FG_ENG.43.b
+		ENG = { country_event = { id = FG_ENG.421 } }
+	}
+}
+country_event = {
+	id = FG_ENG.421
+	title = FG_ENG.421.t
+	desc = FG_ENG.421.d
+	picture = GFX_report_event_generic_sign_treaty2
+	#War
+	option = {
+		name = FG_ENG.421.a
+		ENG = {
+			create_wargoal = {
+					target = PER
+					type = take_state_focus
+					expire = 0
+					generator = { 411 412 413 }
+				}
+		}
+	}
+	#Claim
+	option = {
+		name = FG_ENG.421.b
+		411 = { add_claim_by = ENG }
+		412 = { add_claim_by = ENG }
+		413 = { add_claim_by = ENG }
+	}
+}
+country_event = {
+	id = FG_ENG.400
+	title = FG_ENG.400.t
+	desc = FG_ENG.400.d
+	picture = GFX_report_event_generic_sign_treaty2
+	option = {
+		name = FG_ENG.400.a
+		411 = { add_claim_by = ENG }
+		412 = { add_claim_by = ENG }
+		413 = { add_claim_by = ENG }
+	}
+}
