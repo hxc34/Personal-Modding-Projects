@@ -1,0 +1,30 @@
+scripted_gui = { #ROOT is the player country using the gui, and FROM is the other country
+	give_rights = {
+	
+		context_type = selected_state_context
+		
+		window_name = "give_rights_container"
+		
+		visible = {
+			AND = {
+				ROOT = {
+					is_ai = no
+				}
+				NOT = { is_controlled_by = ROOT }
+			}
+			
+		}
+		
+		effects = {
+			give_rights_click = {
+				rights_effect = yes		
+			}
+		}
+		triggers = {
+			give_rights_click_enabled = {
+				always = yes
+			}
+		}
+	}
+}
+

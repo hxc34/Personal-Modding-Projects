@@ -1,0 +1,31 @@
+rights_effect = {
+		if = {
+			limit = {
+				AND = {
+					check_variable = { resource_rights_receiver = ROOT.id }
+					owner = {
+						PREV = {
+							check_variable = { resource_rights_giver = PREV.id }
+						}
+					}
+				}				
+				
+			}
+			clear_variable = resource_rights_receiver
+			clear_variable = resource_rights_giver
+			ROOT = {
+				remove_resource_rights = PREV
+			}
+		}
+		else = {
+			set_variable = { resource_rights_receiver = ROOT.id }
+			owner = {
+				give_resource_rights = { receiver = ROOT state = PREV }
+				hidden_effect = {
+					PREV = {
+						set_variable = { resource_rights_giver = PREV.id }
+					}
+				}
+			}
+		}
+}
